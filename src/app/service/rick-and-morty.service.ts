@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
+
 import {Character} from "../models/Character";
 import {PageInfo} from "../models/PageInfo";
 
 @Injectable({
   providedIn: 'root'
 })
-export class RickAndMortyServiceService {
+export class RickAndMortyService {
 
   private readonly rickAndMortyUrl = 'https://rickandmortyapi.com/api/character/';
 

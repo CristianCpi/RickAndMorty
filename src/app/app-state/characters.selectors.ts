@@ -1,4 +1,5 @@
 import { createFeatureSelector } from '@ngrx/store';
+
 import {Character} from "../models/Character";
 import {PageInfo} from "../models/PageInfo";
 

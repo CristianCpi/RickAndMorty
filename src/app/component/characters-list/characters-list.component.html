@@ -1,1 +1,23 @@
-<p>characters-list works!</p>
+<input class="center-block" type="search" placeholder="Search" aria-label="Search"
+       (keyup)="search(searchText.value)" #searchText>
+<div *ngIf="characterFound">
+  <div>
+    <div class="row">
+      <div class="column" *ngFor="let character of characters; let i = index;">
+        <div [routerLink]="['/character']" (click)="selectCharacter(character.id)">
+          <app-character-card [character]="character"></app-character-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p>Character count: {{pageInfo?.count}}</p>
+  <p>Pages: {{pageInfo?.pages}}</p>
+  <div class="pagination">
+    <button (click)="getPreviousPage()">&laquo;</button>
+    Page {{page}}
+    <button (click)="getNextPage()">&raquo;</button>
+  </div>
+</div>
+<div *ngIf="!characterFound">
+  <app-error></app-error>
+</div>

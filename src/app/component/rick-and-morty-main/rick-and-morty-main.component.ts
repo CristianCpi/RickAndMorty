@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {Store} from "@ngrx/store";
+import {Router} from "@angular/router";
+
+import {RickAndMortyService} from "../../service/rick-and-morty.service";
+import {selectCharacters, selectPageInfo} from "../../app-state/characters.selectors";
 
 @Component({
   selector: 'app-rick-and-morty-main',
-  templateUrl: './rick-and-morty-main.component.html',
-  styleUrls: ['./rick-and-morty-main.component.scss']
+  templateUrl: './rick-and-morty-main.component.html'
 })
-export class RickAndMortyMainComponent implements OnInit {
+export class RickAndMortyMainComponent {
 
-  constructor() { }
+  public characters$ = this.store.select(selectCharacters);
+  public pageInfo$ = this.store.select(selectPageInfo);
 
-  ngOnInit(): void {
+  constructor(private store: Store,
+              private rickAndMortyService: RickAndMortyService,
+              private router: Router) { }
+
+  public onSelect(characterId: number): void {
+    this.router.navigate(['/character', characterId]);
   }
 
 }

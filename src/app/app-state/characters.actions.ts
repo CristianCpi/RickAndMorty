@@ -1,8 +1,9 @@
 import { createAction, props } from '@ngrx/store';
+
 import {Character} from "../models/Character";
 import {PageInfo} from "../models/PageInfo";
 
-export const retrievedCharacterList = createAction(
+export const retrieveCharacterList = createAction(
   '[Character List/API] Retrieve Characters Success',
   props<{ characters: Character[] }>()
 );

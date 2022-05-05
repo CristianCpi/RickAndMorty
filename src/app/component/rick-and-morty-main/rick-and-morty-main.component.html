@@ -1,1 +1,1 @@
-<p>rick-and-morty-main works!</p>
+<app-characters-list class="character-list" [characters]="characters$ | async" [pageInfo]="pageInfo$ | async" (select)="onSelect($event)"></app-characters-list>

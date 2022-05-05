@@ -1,0 +1,38 @@
+p {
+  text-align: center;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+div.pagination {
+  text-align: center;
+}
+
+.column {
+  float: left;
+  margin-left: 5%;
+  width: 15%;
+  padding: 8px 8px 8px 8px;
+}
+
+.row {
+  margin: 0 -5px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 80%;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
